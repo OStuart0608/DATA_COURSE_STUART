@@ -15,20 +15,7 @@ assignment_6_data_1 <- assignment_6_data %>%
                           Time_in_Hours == 'Hr_144'~144,)) %>%
   view()
 
-head(assignment_6_data_1)
 
-assignment_6_data_1$Time_in_Hours <- as.numeric(assignment_6_data_1$Time_in_Hours)
-
-unique(assignment_6_data_1$`Sample ID`)
-
-
-assignment_6_data_2 <- assignment_6_data_1 %>%
-  mutate(Type = case_when(
-    `Sample ID` %in% c("Clear_Creeek", "Waste Water") ~ 'Water',
-    TRUE ~ 'Soil'
-  )) %>%
-  
-  view()
 
 
 # 2. Creates a new column specifying whether a sample is from soil or water
