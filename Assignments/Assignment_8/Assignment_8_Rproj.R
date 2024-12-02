@@ -97,17 +97,17 @@ plot(Assignment_8_pre$Light, Assignment_8_pre$GrowthRate, xlab = "Light",
 
 
 ## Upload responses to the following as a numbered plaintext document to Canvas:
-##Are any of your predicted response values from your best model scientifically meaningless?Explain.
+##1. Are any of your predicted response values from your best model scientifically meaningless?Explain.
 # It seems that our predicited values almost match our real data values which most likley means they are scientifically meaningless. 
 
 
-##In your plots, did you find any non-linear relationships? Do a bit of research online and give a link to at least one resource explaining how to deal with modeling non-linear relationships in R.
+## 2. In your plots, did you find any non-linear relationships? Do a bit of research online and give a link to at least one resource explaining how to deal with modeling non-linear relationships in R.
 
 
 # In my plots, the only non-linear relationship that I found was the nitorgen and growthrate plots by species. Link: https://www.datacamp.com/tutorial/introduction-to-non-linear-model-and-insights-using-r
 
 
-## Write the code you would use to model the data found in “/Data/non_linear_relationship.csv” with a linear model (there are a few ways of doing this)
+## 3. Write the code you would use to model the data found in “/Data/non_linear_relationship.csv” with a linear model (there are a few ways of doing this)
 
 
 read.csv("C:/Users/Owner/Desktop/Biol 3100/DATA_COURSE_STUART/Data/non_linear_relationship.csv")
