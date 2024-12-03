@@ -93,3 +93,10 @@ Even with this partial data set (not current), you should be able to see that (w
 
 **VI.** (BONUS 10 pts)
 **Using the FULL data set, plot cumulative deaths for the entire US over time**
+  
+  
+  
+  
+  
+  
+  + Youll need to read ahead a bit and use the dplyr package functions group_by() and summarize() to accomplish this.
