@@ -175,11 +175,3 @@ broom::tidy(Exam_3_mod) %>%
 
 
 ```
-
-**6. Commit and push all your code and files to GitHub. I'll pull your repository and grade what I find in your html report.**
-
-___
-
-None of the tasks here should be too difficult. You've done them before. So take a bit of care to produce a report that looks clean. Please include the code used to produce plots or models, etc. In the future, feel free to hide your code to make your reports for other projects look cleaner, but since we're learning R in this course, I still mostly want to see your code where applicable. In other words, don't use 'echo=FALSE' in every code chunk.
-                                                                                                              
-                                                                                                    

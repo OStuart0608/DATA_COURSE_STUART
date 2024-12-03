@@ -17,7 +17,7 @@ Exam_2_data_1 <- Exam_2_data %>%
   transform(Year=str_replace(Year,"U5MR.","")) %>%
   view()
 
- 
+
 
 
 ##3. Plot each country’s U5MR over time (20 points)
@@ -56,8 +56,8 @@ Mean_U5MR %>%
              y = Mean_U5MR,
              color = Continent)) + 
   geom_line()
-  
-  
+
+
 
 
 
@@ -130,26 +130,18 @@ Exam_2_data_3 <- Exam_2_data_1 %>%
   pivot_longer(starts_with('mod')) %>%
   view()
 
- Exam_2_data_4 <- Exam_2_data_3 %>%
+Exam_2_data_4 <- Exam_2_data_3 %>%
   rename(Predicted_U5MR = value) %>%
   view()
 
 Exam_2_data_4 %>%
   ggplot(aes(x = Year, y = Predicted_U5MR , colour = Continent))+
   geom_line() +
-   facet_wrap(~ name) +
+  facet_wrap(~ name) +
   labs(title = 'Model Predictions',
        x = 'Year',
        y = 'Predicted U5MR')
-   
+
 
 
 ## 10. BONUS - Using your preferred model, predict what the U5MR would be for Ecuador in the year 2020. The real value for Ecuador for 2020 was 13 under-5 deaths per 1000 live births. How far off was your model prediction???
-
-
-
-
-
-
-
-
