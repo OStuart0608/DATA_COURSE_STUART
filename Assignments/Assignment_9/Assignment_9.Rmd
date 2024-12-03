@@ -1,44 +1,177 @@
 ---
-output: 
-html_document:
-  number_sections=TRUE
-pagetitle: Assignment_9
+title: "Assignment_9project"
+output: html_document
+date: "2024-12-03"
 ---
-
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(modelr)
+library(easystats)
+library(GGally)
+
+Assignment_9_data <- read.csv("C:/Users/Owner/Desktop/Biol 3100/DATA_COURSE_STUART/Data/GradSchool_Admissions.csv")
+
+head(Assignment_9_data)
+
+Assignment_9_data1 <- Assignment_9_data %>%
+  mutate(admit = as.character(admit)) %>%
+mutate(rank = as.character(rank)) %>%
+  head()
+
+# Replace values using logical indexing
+Assignment_9_data1$admit[Assignment_9_data1$admit == 1] <- "Yes"
+Assignment_9_data1$admit[Assignment_9_data1$admit == 0] <- "No"
+
+
+Assignment_9_data1 %>%
+  ggplot(mapping = aes(x = gpa, 
+                       y = rank, colour = admit
+  )) + 
+  geom_point() +
+  labs(title = 'Grad gpa and rank admitions',
+       x = 'GPA',
+       y = 'Rank') + 
+  theme(axis.text.x = element_text(angle=90, hjust = 1 ))
+
+Assignment_9_data1 %>%
+  ggplot(mapping = aes(x = gre, 
+                       y = rank, colour = admit
+  )) + 
+  geom_point() +
+  labs(title = 'Grad gre and rank admitions',
+       x = 'GRE',
+       y = 'Rank') + 
+  theme(axis.text.x = element_text(angle=90, hjust = 1 ))
+
+Assignment_9_data1 %>%
+  ggplot(mapping = aes(x = rank, 
+                       y = gpa, colour = gre
+  )) + 
+  geom_point() +
+  labs(title = 'Grad Rank GPA with Gre',
+       x = 'Rank',
+       y = 'GPA') + 
+  theme(axis.text.x = element_text(angle=90, hjust = 1 ))
+
+
+Assignment_9_data1 %>%
+  ggplot(mapping = aes(x = gpa, 
+                       y = gre, colour = admit
+  )) + 
+  geom_point() +
+  facet_wrap(~rank) +
+  labs(title = 'Grad gre admitions',
+       x = 'GRE',
+       y = 'Rank') + 
+  theme(axis.text.x = element_text(angle=90, hjust = 1 ))
 ```
 
-# **Assignment 9**
+## R Markdown
 
-In this assignment, you will use R (within R-Studio) to:
-  
-+ Load and clean a real data set
-+ Conduct exploratory analyses, including informative figures
-+ Build and test appropriate models
-+ Draw conclusions about your data
-+ Combine all of the above into a well-documented R-Markdown report and export (knit) it into an HTML file
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-**All file paths should be relative, starting from *your* Assignment_9 directory!!**
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-**This means that you need to create a new R-Project named "Assignment_9.Rproj" in your Assignment_9 directory, and work from scripts within that.**
+```{r cars}
+
+library(tidyverse)
+library(modelr)
+library(easystats)
+library(GGally)
+
+Assignment_9_data <- read.csv("C:/Users/Owner/Desktop/Biol 3100/DATA_COURSE_STUART/Data/GradSchool_Admissions.csv")
 
 
-## **For credit...**
+Assignment_9_data1 <- Assignment_9_data %>%
+  mutate(admit = as.character(admit)) %>%
+mutate(rank = as.character(rank))
 
-1.  Push a completed version of your Rproj and R-markdown file (details at end of this assignment) to GitHub
-2.  Your score will also depend on your analyses and presentation of your final report
+# Replace values using logical indexing
+Assignment_9_data1$admit[Assignment_9_data1$admit == 1] <- "Yes"
+Assignment_9_data1$admit[Assignment_9_data1$admit == 0] <- "No"
 
-____________
 
-# Your tasks:
+Assignment_9_data1 %>%
+  ggplot(mapping = aes(x = gpa, 
+                       y = rank, colour = admit
+  )) + 
+  geom_point() +
+  labs(title = 'Grad gpa and rank admitions',
+       x = 'GPA',
+       y = 'Rank') + 
+  theme(axis.text.x = element_text(angle=90, hjust = 1 ))
 
-+ Use the data set "/Data/GradSchool_Admissions.csv"
-+ You will explore and model the predictors of graduate school admission
-  - the "admit" column is coded as 1=success and 0=failure (that's binary, so model appropriately)
-  - the other columns are the GRE score, the GPA, and the rank of the undergraduate institution, where I is "top-tier."
-+ Document your data explorations, figures, and conclusions in a reproducible R-markdown report
-+ That means I want to see, in your html report, your process of model evaluation and selection. Here's an [example](https://gzahn.github.io/data-course/Repository/Assignments/Assignment_9/example.html){target="_blank"}
-+ Upload your **self-contained** R project, including knitted HTML report, to GitHub in *your* Assignment_9 directory
+Assignment_9_data1 %>%
+  ggplot(mapping = aes(x = gre, 
+                       y = rank, colour = admit
+  )) + 
+  geom_point() +
+  labs(title = 'Grad gre and rank admitions',
+       x = 'GRE',
+       y = 'Rank') + 
+  theme(axis.text.x = element_text(angle=90, hjust = 1 ))
 
+Assignment_9_data1 %>%
+  ggplot(mapping = aes(x = rank, 
+                       y = gpa, colour = gre
+  )) + 
+  geom_point() +
+  labs(title = 'Grad Rank GPA with Gre',
+       x = 'Rank',
+       y = 'GPA') + 
+  theme(axis.text.x = element_text(angle=90, hjust = 1 ))
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+mod1 <- glm(data=Assignment_9_data,
+            formula=admit ~ gpa)
+
+mod2 <- glm(data=Assignment_9_data,
+            formula= admit ~ gre)
+
+mod3 <- glm(data=Assignment_9_data,
+            formula= admit ~ rank)
+
+mod4 <- glm(data=Assignment_9_data,
+            formula=admit ~ gpa * gre)
+
+full_mod <- glm(data=Assignment_9_data,
+                formula=admit ~ gpa * gre * rank)
+
+model_comparison <- compare_performance(mod1,mod2,mod3,mod4,full_mod,
+                                        rank=TRUE)
+
+model_comparison
+
+compare_performance(mod1,mod2,mod3,mod4,full_mod,
+                             rank=TRUE) %>% plot()
+
+## Predictions
+
+library(modelr)
+Assignment9_Predictions <- add_predictions(Assignment_9_data, full_mod)
+
+Assignment9_Predictions
+
+
+plot(Assignment9_Predictions$pred, 
+     Assignment9_Predictions$admit, 
+     xlab = "Prediction", 
+     ylab = "Admit")
+
+plot(Assignment9_Predictions$pred, 
+     Assignment9_Predictions$gpa, 
+     xlab = "Prediction", 
+     ylab = "Admit")
+
+
+summary(Assignment9_Predictions)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
