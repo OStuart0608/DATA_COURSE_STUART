@@ -5,12 +5,12 @@ library(GGally)
 
 Assignment_9_data <- read.csv("C:/Users/Owner/Desktop/Biol 3100/DATA_COURSE_STUART/Data/GradSchool_Admissions.csv")
 
-head(Assignment_9_data)
+view(Assignment_9_data)
 
 Assignment_9_data1 <- Assignment_9_data %>%
   mutate(admit = as.character(admit)) %>%
   mutate(rank = as.character(rank)) %>%
-  head()
+  view()
 
 # Replace values using logical indexing
 Assignment_9_data1$admit[Assignment_9_data1$admit == 1] <- "Yes"
