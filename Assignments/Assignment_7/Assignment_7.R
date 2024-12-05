@@ -4,9 +4,10 @@ library(ggplot2)
 
 ## 1.Import the Assignment_7/Utah_Religions_by_County.csv data set
 
-read.csv("C:/Users/Owner/Desktop/Biol 3100/DATA_COURSE_STUART/Data/Utah_Religions_by_County.csv")
+read.csv("../../Data/Utah_Religions_by_County.csv")
 
-Utah_7 <- read.csv("C:/Users/Owner/Desktop/Biol 3100/DATA_COURSE_STUART/Data/Utah_Religions_by_County.csv") 
+Utah_7 <- read.csv("../../Data/Utah_Religions_by_County.csv") 
+
 
 
 

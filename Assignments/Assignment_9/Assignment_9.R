@@ -3,7 +3,7 @@ library(modelr)
 library(easystats)
 library(GGally)
 
-Assignment_9_data <- read.csv("C:/Users/Owner/Desktop/Biol 3100/DATA_COURSE_STUART/Data/GradSchool_Admissions.csv")
+Assignment_9_data <- read.csv("../../Data/GradSchool_Admissions.csv")
 
 view(Assignment_9_data)
 

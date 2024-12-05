@@ -7,9 +7,9 @@ library(broom)
 library(kableExtra)
 library(easystats)
 
-read.csv("C:/Users/Owner/Desktop/Biol 3100/DATA_COURSE_STUART/Data/mushroom_growth.csv")
+read.csv("../../Data/mushroom_growth.csv")
 
-Assingment_8_data <- read.csv("C:/Users/Owner/Desktop/Biol 3100/DATA_COURSE_STUART/Data/mushroom_growth.csv")
+Assingment_8_data <- read.csv("../../Data/mushroom_growth.csv")
 
 
 view(Assingment_8_data)
@@ -110,9 +110,9 @@ plot(Assignment_8_pre$Light, Assignment_8_pre$GrowthRate, xlab = "Light",
 ## 3. Write the code you would use to model the data found in “/Data/non_linear_relationship.csv” with a linear model (there are a few ways of doing this)
 
 
-read.csv("C:/Users/Owner/Desktop/Biol 3100/DATA_COURSE_STUART/Data/non_linear_relationship.csv")
+read.csv("../../Data/non_linear_relationship.csv")
 
-Non_linear_Data <- read.csv("C:/Users/Owner/Desktop/Biol 3100/DATA_COURSE_STUART/Data/non_linear_relationship.csv")
+Non_linear_Data <- read.csv("../../Data/non_linear_relationship.csv")
 
 view(Non_linear_Data)
 

@@ -3,7 +3,7 @@
 library(tidyverse)
 
 
-read_csv("C:/Users/Owner/Desktop/Biol 3100/DATA_COURSE_STUART/Data/cleaned_covid_data.csv")
+read_csv("../Data/cleaned_covid_data.csv")
 
 
 ##II.##

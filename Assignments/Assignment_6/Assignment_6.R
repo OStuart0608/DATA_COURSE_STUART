@@ -1,8 +1,7 @@
 library(tidyverse)
 
-assignment_6_data <- read_csv("C:/Users/Owner/Desktop/Biol 3100/DATA_COURSE_STUART/Data/BioLog_Plate_Data.csv")
+assignment_6_data <- read_csv("../../Data/BioLog_Plate_Data.csv")
 view(assignment_6_data)
-
 
 # Instructions 1. Cleans this data into tidy (long) form
 
