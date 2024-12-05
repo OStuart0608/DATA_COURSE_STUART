@@ -3,12 +3,12 @@
 library(tidyverse)
 
 
-read_csv("C:/Users/Owner/Desktop/Biol 3100/DATA_COURSE_STUART/Exams/Exam 1/cleaned_covid_data.csv")
+read_csv("C:/Users/Owner/Desktop/Biol 3100/DATA_COURSE_STUART/Data/cleaned_covid_data.csv")
 
 
 ##II.##
 ##Subset the data set to just show states that begin with "A" and save this as an object called A_states. (20 pts)##
-Exam_data <- read_csv("C:/Users/Owner/Desktop/Biol 3100/DATA_COURSE_STUART/Exams/Exam 1/cleaned_covid_data.csv")
+Exam_data <- read_csv("C:/Users/Owner/Desktop/Biol 3100/DATA_COURSE_STUART/Data/cleaned_covid_data.csv")
 view(Exam_data)
 A_states <- Exam_data %>%
   filter(grepl('A', Province_State)) %>%
